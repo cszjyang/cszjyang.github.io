@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cszjyang.github.io/sitemap.xml
