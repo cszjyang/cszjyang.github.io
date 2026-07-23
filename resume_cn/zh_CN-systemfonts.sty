@@ -1,0 +1,29 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{zh_CN-systemfonts}[2026/07/17 Portable Simplified Chinese fonts]
+
+\RequirePackage{xeCJK}
+
+% Use a complete Latin family for English, numbers and punctuation.
+\setmainfont{Lato}
+\setsansfont{Lato}
+
+% Prefer modern open CJK fonts when available. The final fallback is present
+% in the current workspace and keeps the repository free of large font files.
+\IfFontExistsTF{Noto Sans CJK SC}{
+  \setCJKmainfont[AutoFakeBold=2,AutoFakeSlant=.2]{Noto Sans CJK SC}
+  \setCJKsansfont[AutoFakeBold=2,AutoFakeSlant=.2]{Noto Sans CJK SC}
+}{
+  \IfFontExistsTF{Source Han Sans SC}{
+    \setCJKmainfont[AutoFakeBold=2,AutoFakeSlant=.2]{Source Han Sans SC}
+    \setCJKsansfont[AutoFakeBold=2,AutoFakeSlant=.2]{Source Han Sans SC}
+  }{
+    \setCJKmainfont[AutoFakeBold=2,AutoFakeSlant=.2]{Droid Sans Fallback}
+    \setCJKsansfont[AutoFakeBold=2,AutoFakeSlant=.2]{Droid Sans Fallback}
+  }
+}
+
+% Enable native Chinese line-breaking behavior.
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\endinput

@@ -41,6 +41,22 @@
         body {
             font-family: Helvetica;
         }
+
+        .contact-links {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.35em 1em;
+            margin-top: 0.35em;
+        }
+
+        .contact-links a {
+            white-space: nowrap;
+        }
+
+        .contact-links i {
+            margin-right: 0.25em;
+        }
     </style>
 </head>
 
@@ -67,11 +83,14 @@
                                 <a href="https://cs.hust.edu.cn/">School of Computer Science and Technology</a><br>
                                 <a href="http://www.hust.edu.cn/">Huazhong University of Science and
                                     Technology</a><br>
-                                <a href="mailto:cszjyang@hust.edu.cn"><i><i class="fas fa-envelope fa-2x"></i></i></a>
-                                &nbsp;
-                                <a href="https://github.com/cszjyang"><i class="fab fa-github fa-2x"></i></a>
-
-
+                                <span class="contact-links">
+                                    <a href="mailto:cszjyang@hust.edu.cn"><i class="fas fa-envelope"
+                                            aria-hidden="true"></i>cszjyang@hust.edu.cn</a>
+                                    <a href="https://github.com/cszjyang"><i class="fab fa-github"
+                                            aria-hidden="true"></i>GitHub: cszjyang</a>
+                                    <a href="resume_en/resume.pdf"><i class="fas fa-file-pdf"
+                                            aria-hidden="true"></i>CV (PDF)</a>
+                                </span>
                         </p>
                         </font>
                         <span class="Apple-style-span"

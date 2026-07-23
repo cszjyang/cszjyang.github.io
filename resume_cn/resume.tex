@@ -1,0 +1,74 @@
+% !TEX program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass{resume}
+\usepackage{zh_CN-systemfonts}
+\hypersetup{
+  pdftitle={杨志军中文简历},
+  pdfauthor={杨志军},
+  pdfsubject={分布式系统与计算机系统结构求职简历},
+  pdfkeywords={分布式系统, 分离式内存, CXL, OSDI, SOSP, FAST}
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\name{杨志军}
+
+\basicInfo{
+  \phone{135-9929-6060} \textperiodcentered\
+  \email{cszjyang@hust.edu.cn} \textperiodcentered\
+  \github[github.com/cszjyang]{https://github.com/cszjyang} \textperiodcentered\
+  \homepage[cszjyang.github.io]{https://cszjyang.github.io/}}
+
+\begin{center}
+  \small 计算机系统结构博士研究生 \quad | \quad 分布式系统 \quad RDMA / CXL \quad 分离式内存与资源池化
+\end{center}
+\vspace{-1.2ex}
+
+\section[个人概况]{\faInfo\ 个人概况}
+华中科技大学计算机系统结构博士研究生，研究方向包括分布式计算、新型内存与网络技术、资源池化。以第一作者在 SOSP 2026 和 OSDI 2026 发表研究成果，并参与 FAST 2027、OSDI 2024 工作；拥有系统研究、学术论文写作及学术评审经验。
+
+\section[教育经历]{\faGraduationCap\ 教育经历}
+\datedsubsection{\textbf{华中科技大学} \quad 计算机科学与技术学院}{2023 -- 至今}
+\textit{计算机系统结构，博士研究生（在读）} \quad 导师：华宇教授
+
+\datedsubsection{\textbf{华中科技大学} \quad 计算机科学与技术学院}{2023}
+\textit{计算机科学与技术，工学学士}
+
+\section[代表性科研成果 / Publications]{\faCogs\ 代表性科研成果 / Publications}
+\publication
+  {XTRA -- First Author}
+  {SOSP 2026}
+  {XTRA: Unifying Cache Coherence and Concurrency Control for Distributed Transactions in a \mbox{CXL Pod}.}
+  {面向 \mbox{CXL Pod} 中的分布式事务，研究缓存一致性与并发控制的统一机制。录用率：62/390（15.9\%）。}
+
+\publication
+  {FORGE -- First Author -- Best Paper Award Nominee}
+  {OSDI 2026}
+  {FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems.}
+  {面向分离式内存环境下的缓存系统，研究同步放大问题并设计 FORGE。录用率：136/681（20.0\%）。}
+
+\publication
+  {CloverRec -- Co-author}
+  {FAST 2027}
+  {CloverRec: Cost-Efficient Disaggregated Processing-in-Memory Systems for Deep Recommendation Inference.}
+  {面向深度推荐推理，研究低成本的分离式存内处理系统。录用率：18/92（19.6\%）。}
+
+\publication
+  {Motor -- Co-author}
+  {OSDI 2024}
+  {Motor: Enabling Multi-Versioning for Distributed Transactions on Disaggregated Memory.}
+  {研究分离式内存环境下分布式事务的多版本机制。论文第 801--819 页，录用率：53/276（19.2\%）。}
+
+\section[学术服务]{\faUsers\ 学术服务}
+\datedline{EuroSys 2026 Shadow Program Committee Member (Spring \& Fall)}{2026}
+\datedline{USENIX ATC 2025 Artifact Evaluation Committee Member}{2025}
+
+\section[荣誉奖励]{\faHeartO\ 荣誉奖励}
+\datedline{优秀研究生；科技创新奖学金}{2024}
+\datedline{优秀毕业生}{2023}
+\datedline{新加坡国立大学计算机学院暑期项目优秀表现}{2021}
+\datedline{优秀本科生（2021--2022）；人民奖学金（2020--2022）}{2020 -- 2022}
+
+\end{document}

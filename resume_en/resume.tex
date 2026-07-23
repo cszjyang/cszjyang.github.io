@@ -1,0 +1,179 @@
+% !TEX program = xelatex
+% !TEX encoding = UTF-8 Unicode
+%
+% Academic resume for Zhijun Yang.
+% Layout adapted from Jake's Resume:
+% https://github.com/jakegut/resume
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\setmainfont[
+  BoldFont=texgyretermes-bold.otf,
+  ItalicFont=texgyretermes-italic.otf,
+  BoldItalicFont=texgyretermes-bolditalic.otf,
+  Ligatures=NoCommon
+]{texgyretermes-regular.otf}
+\usepackage[
+  a4paper,
+  left=0.70in,
+  right=0.70in,
+  top=0.58in,
+  bottom=0.58in
+]{geometry}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+  pdftitle={Zhijun Yang -- Academic Resume},
+  pdfauthor={Zhijun Yang},
+  pdfsubject={Academic resume},
+  pdfkeywords={distributed systems, disaggregated memory, CXL, RDMA, resource pooling}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\urlstyle{same}
+\raggedright
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.08em}\titlerule]
+\titlespacing*{\section}{0pt}{0.78em}{0.42em}
+
+\newcommand{\educationentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}%
+}
+
+\newcommand{\datedentry}[2]{%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    #1 & #2
+  \end{tabular*}%
+}
+
+\newcommand{\resumelink}[2]{\href{#1}{[#2]}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries Zhijun Yang}\\[6pt]
+  {\normalsize
+    Ph.D. Student in Computer System Architecture,
+    Huazhong University of Science and Technology
+  }\\[3pt]
+  {\small
+    \href{mailto:cszjyang@hust.edu.cn}{cszjyang@hust.edu.cn}
+    \enspace$\vert$\enspace
+    \href{https://cszjyang.github.io/}{cszjyang.github.io}
+    \enspace$\vert$\enspace
+    \href{https://github.com/cszjyang}{github.com/cszjyang}
+  }
+\end{center}
+\vspace{-0.55em}
+
+\section{Education}
+
+\educationentry
+  {Huazhong University of Science and Technology (HUST)}
+  {Wuhan, China}
+  {Ph.D. in Computer System Architecture}
+  {Sep. 2023 -- Jun. 2028 (expected)}
+
+\vspace{0.15em}
+\datedentry
+  {\textit{Advisor:} \href{https://csyhua.github.io/csyhua/index.html}{Prof. Yu Hua}}
+  {}
+
+\vspace{0.30em}
+\educationentry
+  {Huazhong University of Science and Technology (HUST)}
+  {Wuhan, China}
+  {B.Eng. in Computer Science and Technology}
+  {Sep. 2019 -- Jun. 2023}
+
+\section{Research Interests}
+
+Distributed systems, disaggregated memory, CXL/RDMA-based systems, and resource disaggregation and pooling.
+
+\section{Publications}
+
+\begin{enumerate}[
+  leftmargin=1.55em,
+  label={[\arabic*]},
+  itemsep=0.42em,
+  topsep=0.05em,
+  parsep=0pt,
+  partopsep=0pt
+]
+
+\item
+  \textbf{Zhijun Yang}, Yu Hua, Ming Zhang, Menglei Chen, Xumin Chen, and Aoyang Tong.
+  ``XTRA: Unifying Cache Coherence and Concurrency Control for Distributed Transactions in a CXL Pod.''
+  \textit{32nd ACM Symposium on Operating Systems Principles (SOSP '26),} to appear.
+  \resumelink{https://github.com/cszjyang/xtra}{Code}
+
+\item
+  \textbf{Zhijun Yang}, Yu Hua, Ming Zhang, Menglei Chen, and Yixiao Wang.
+  ``FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems.''
+  \textit{20th USENIX Symposium on Operating Systems Design and Implementation (OSDI '26),}
+  pp.~977--995, 2026.
+  \textbf{Nominated for the Jay Lepreau Best Paper Award.}
+  \resumelink{https://www.usenix.org/conference/osdi26/presentation/yang-zhijun}{Paper}
+  \resumelink{https://github.com/cszjyang/forge}{Code}
+
+\item
+  Menglei Chen, Yu Hua, \textbf{Zhijun Yang}, Yixiao Wang, and Xumin Chen.
+  ``CloverRec: Cost-Efficient Disaggregated Processing-in-Memory Systems for Deep Recommendation Inference.''
+  \textit{25th USENIX Conference on File and Storage Technologies (FAST '27),} to appear.
+  \resumelink{https://github.com/LighT-chenml/CloverRec}{Code}
+
+\item
+  Ming Zhang, Yu Hua, and \textbf{Zhijun Yang}.
+  ``Motor: Enabling Multi-Versioning for Distributed Transactions on Disaggregated Memory.''
+  \textit{18th USENIX Symposium on Operating Systems Design and Implementation (OSDI '24),}
+  pp.~801--819, 2024.
+  \resumelink{https://www.usenix.org/conference/osdi24/presentation/zhang-ming}{Paper}
+  \resumelink{https://github.com/minghust/motor}{Code}
+
+\end{enumerate}
+
+\section{Academic Service}
+
+\datedentry
+  {Shadow Program Committee Member, EuroSys 2026 (Spring and Fall)}
+  {2026}
+\vspace{0.24em}
+\datedentry
+  {Artifact Evaluation Committee Member, USENIX ATC 2025}
+  {2025}
+
+\section{Honors and Awards}
+
+\datedentry
+  {Outstanding Graduate Student, HUST}
+  {2024}
+\vspace{0.20em}
+\datedentry
+  {Science and Technology Innovation Scholarship, HUST}
+  {2024}
+\vspace{0.20em}
+\datedentry
+  {Outstanding Graduate (B.Eng.), HUST}
+  {2023}
+\vspace{0.20em}
+\datedentry
+  {Award for Excellent Performance, NUS School of Computing Summer Workshop}
+  {2021}
+
+\end{document}
