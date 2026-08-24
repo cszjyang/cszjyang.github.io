@@ -1,37 +1,33 @@
-# 杨志军中文简历
+# 杨志军——中文求职简历
 
-这是一份根据个人主页内容（包括页面中暂时注释的论文条目）整理的一页式中文求职简历。
+本目录包含一页式中文研究型求职简历，版式与 `resume_en` 中的英文版保持一致，适用于计算机系统、分布式系统及相关岗位。
 
 ## 文件
 
-- `resume.tex`：简历内容，可直接编辑。
-- `resume.cls`：排版样式。
-- `zh_CN-systemfonts.sty`：中文字体配置。
-- `ctexhook.sty`：与本地 XeCJK 配套的官方 CTeX hook 依赖（LPPL 1.3c）。
+- `resume.tex`：简历源文件。
 - `resume.pdf`：编译生成的投递版本。
+- `Makefile`：可复现的 PDF 构建入口。
+- `ctexhook.sty`：当前 XeCJK 环境所需的中文排版兼容文件。
+- `LICENSE`：改编模板的许可证。
 
 ## 编译
 
-需要 XeLaTeX：
+运行：
 
 ```bash
 make
 ```
 
-或直接运行：
+构建过程使用 XeLaTeX，并连续编译两次，以正确生成 PDF 元数据和超链接。
 
-```bash
-xelatex -interaction=nonstopmode -halt-on-error resume.tex
-```
+## 内容规范
 
-## 待确认或补充
+- 论文列出完整作者名单，并将 Zhijun Yang 加粗。
+- 已录用但尚未正式出版的论文标注为“即将发表”。
+- 已正式出版的论文链接至官方页面，同时保留公开代码链接。
+- 页眉保留求职联系所需的手机号、邮箱、个人主页和 GitHub。
+- 简历不包含照片、论文录用率、性能数据和泛化的技能列表。
 
-- 手机号。
-- 明确的目标岗位与目标城市。
-- 博士入学年月、预计毕业年月及本科起止年月。
-- 编程语言、系统工具、开源项目或实习经历。
-- 可量化的科研贡献，例如性能提升、测试规模和个人负责模块。
+## 模板
 
-## 模板来源
-
-版式基于 [billryan/resume](https://github.com/billryan/resume) 修改，原模板使用 MIT License；许可证见 `LICENSE`。`ctexhook.sty` 来自 CTeX-kit 2.5.8，文件内保留了 LPPL 1.3c 许可说明。
+单栏版式与英文版相同，改编自 [Jake's Resume](https://github.com/jakegut/resume)；原模板采用 MIT License。中文排版通过 XeCJK 实现。

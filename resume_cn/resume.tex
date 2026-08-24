@@ -1,74 +1,199 @@
 % !TEX program = xelatex
 % !TEX encoding = UTF-8 Unicode
+%
+% Research-oriented resume for Zhijun Yang (Chinese version).
+% Layout adapted from Jake's Resume:
+% https://github.com/jakegut/resume
 
-\documentclass{resume}
-\usepackage{zh_CN-systemfonts}
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\setmainfont[
+  BoldFont=texgyretermes-bold.otf,
+  ItalicFont=texgyretermes-italic.otf,
+  BoldItalicFont=texgyretermes-bolditalic.otf,
+  Ligatures=NoCommon
+]{texgyretermes-regular.otf}
+\usepackage{xeCJK}
+\setCJKmainfont[
+  AutoFakeBold=2,
+  AutoFakeSlant=.2
+]{Droid Sans Fallback}
+\setCJKsansfont[
+  AutoFakeBold=2,
+  AutoFakeSlant=.2
+]{Droid Sans Fallback}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[
+  a4paper,
+  left=0.70in,
+  right=0.70in,
+  top=0.58in,
+  bottom=0.58in
+]{geometry}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
 \hypersetup{
-  pdftitle={杨志军中文简历},
+  pdftitle={杨志军——中文求职简历},
   pdfauthor={杨志军},
-  pdfsubject={分布式系统与计算机系统结构求职简历},
-  pdfkeywords={分布式系统, 分离式内存, CXL, OSDI, SOSP, FAST}
+  pdfsubject={计算机系统与分布式系统方向求职简历},
+  pdfkeywords={分布式系统, 分离式内存, CXL, RDMA, 资源池化}
 }
 
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\urlstyle{same}
+\raggedright
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.08em}\titlerule]
+\titlespacing*{\section}{0pt}{0.78em}{0.42em}
+
+\newcommand{\educationentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}%
+}
+
+\newcommand{\datedentry}[2]{%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    #1 & #2
+  \end{tabular*}%
+}
+
+\newcommand{\resumelink}[2]{\href{#1}{[#2]}}
+
 \begin{document}
-\pagenumbering{gobble}
-
-\name{杨志军}
-
-\basicInfo{
-  \phone{135-9929-6060} \textperiodcentered\
-  \email{cszjyang@hust.edu.cn} \textperiodcentered\
-  \github[github.com/cszjyang]{https://github.com/cszjyang} \textperiodcentered\
-  \homepage[cszjyang.github.io]{https://cszjyang.github.io/}}
 
 \begin{center}
-  \small 计算机系统结构博士研究生 \quad | \quad 分布式系统 \quad RDMA / CXL \quad 分离式内存与资源池化
+  {\Huge\bfseries 杨志军}\\[6pt]
+  {\normalsize
+    华中科技大学计算机系统结构博士研究生
+  }\\[3pt]
+  {\small
+    \href{tel:+8613599296060}{135-9929-6060}
+    \enspace$\vert$\enspace
+    \href{mailto:cszjyang@hust.edu.cn}{cszjyang@hust.edu.cn}
+    \enspace$\vert$\enspace
+    \href{https://cszjyang.github.io/}{cszjyang.github.io}
+    \enspace$\vert$\enspace
+    \href{https://github.com/cszjyang}{github.com/cszjyang}
+  }
 \end{center}
-\vspace{-1.2ex}
+\vspace{-0.55em}
 
-\section[个人概况]{\faInfo\ 个人概况}
-华中科技大学计算机系统结构博士研究生，研究方向包括分布式计算、新型内存与网络技术、资源池化。以第一作者在 SOSP 2026 和 OSDI 2026 发表研究成果，并参与 FAST 2027、OSDI 2024 工作；拥有系统研究、学术论文写作及学术评审经验。
+\section{教育经历}
 
-\section[教育经历]{\faGraduationCap\ 教育经历}
-\datedsubsection{\textbf{华中科技大学} \quad 计算机科学与技术学院}{2023 -- 至今}
-\textit{计算机系统结构，博士研究生（在读）} \quad 导师：华宇教授
+\educationentry
+  {华中科技大学}
+  {中国，武汉}
+  {计算机系统结构，博士研究生}
+  {2023 年 9 月 -- 2028 年 6 月（预计）}
 
-\datedsubsection{\textbf{华中科技大学} \quad 计算机科学与技术学院}{2023}
-\textit{计算机科学与技术，工学学士}
+\vspace{0.15em}
+\datedentry
+  {\textit{导师：}\href{https://csyhua.github.io/csyhua/index.html}{华宇教授}}
+  {}
 
-\section[代表性科研成果 / Publications]{\faCogs\ 代表性科研成果 / Publications}
-\publication
-  {XTRA -- First Author}
-  {SOSP 2026}
-  {XTRA: Unifying Cache Coherence and Concurrency Control for Distributed Transactions in a \mbox{CXL Pod}.}
-  {面向 \mbox{CXL Pod} 中的分布式事务，研究缓存一致性与并发控制的统一机制。录用率：62/390（15.9\%）。}
+\vspace{0.30em}
+\educationentry
+  {华中科技大学}
+  {中国，武汉}
+  {计算机科学与技术，工学学士}
+  {2019 年 9 月 -- 2023 年 6 月}
 
-\publication
-  {FORGE -- First Author -- Best Paper Award Nominee}
-  {OSDI 2026}
-  {FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems.}
-  {面向分离式内存环境下的缓存系统，研究同步放大问题并设计 FORGE。录用率：136/681（20.0\%）。}
+\section{研究方向}
 
-\publication
-  {CloverRec -- Co-author}
-  {FAST 2027}
-  {CloverRec: Cost-Efficient Disaggregated Processing-in-Memory Systems for Deep Recommendation Inference.}
-  {面向深度推荐推理，研究低成本的分离式存内处理系统。录用率：18/92（19.6\%）。}
+分布式系统、分离式内存、基于 CXL/RDMA 的系统，以及资源解耦与池化。
 
-\publication
-  {Motor -- Co-author}
-  {OSDI 2024}
-  {Motor: Enabling Multi-Versioning for Distributed Transactions on Disaggregated Memory.}
-  {研究分离式内存环境下分布式事务的多版本机制。论文第 801--819 页，录用率：53/276（19.2\%）。}
+\section{论文发表}
 
-\section[学术服务]{\faUsers\ 学术服务}
-\datedline{EuroSys 2026 Shadow Program Committee Member (Spring \& Fall)}{2026}
-\datedline{USENIX ATC 2025 Artifact Evaluation Committee Member}{2025}
+\begin{enumerate}[
+  leftmargin=1.55em,
+  label={\textup{[\arabic*]}},
+  itemsep=0.42em,
+  topsep=0.05em,
+  parsep=0pt,
+  partopsep=0pt
+]
 
-\section[荣誉奖励]{\faHeartO\ 荣誉奖励}
-\datedline{优秀研究生；科技创新奖学金}{2024}
-\datedline{优秀毕业生}{2023}
-\datedline{新加坡国立大学计算机学院暑期项目优秀表现}{2021}
-\datedline{优秀本科生（2021--2022）；人民奖学金（2020--2022）}{2020 -- 2022}
+\item
+  \textbf{Zhijun Yang}, Yu Hua, Ming Zhang, Menglei Chen, Xumin Chen, and Aoyang Tong.
+  ``XTRA: Unifying Cache Coherence and Concurrency Control for Distributed Transactions in a CXL Pod.''
+  \textit{32nd ACM Symposium on Operating Systems Principles (SOSP '26),} 即将发表。
+  \resumelink{https://github.com/cszjyang/xtra}{代码}
+
+\item
+  \textbf{Zhijun Yang}, Yu Hua, Ming Zhang, Menglei Chen, and Yixiao Wang.
+  ``FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems.''
+  \textit{20th USENIX Symposium on Operating Systems Design and Implementation (OSDI '26),}
+  pp.~977--995, 2026.
+  \textbf{获 Jay Lepreau 最佳论文奖提名。}
+  \resumelink{https://www.usenix.org/conference/osdi26/presentation/yang-zhijun}{论文}
+  \resumelink{https://github.com/cszjyang/forge}{代码}
+
+\item
+  Menglei Chen, Yu Hua, \textbf{Zhijun Yang}, Yixiao Wang, and Xumin Chen.
+  ``CloverRec: Cost-Efficient Disaggregated Processing-in-Memory Systems for Deep Recommendation Inference.''
+  \textit{25th USENIX Conference on File and Storage Technologies (FAST '27),} 即将发表。
+  \resumelink{https://github.com/LighT-chenml/CloverRec}{代码}
+
+\item
+  Ming Zhang, Yu Hua, and \textbf{Zhijun Yang}.
+  ``Motor: Enabling Multi-Versioning for Distributed Transactions on Disaggregated Memory.''
+  \textit{18th USENIX Symposium on Operating Systems Design and Implementation (OSDI '24),}
+  pp.~801--819, 2024.
+  \resumelink{https://www.usenix.org/conference/osdi24/presentation/zhang-ming}{论文}
+  \resumelink{https://github.com/minghust/motor}{代码}
+
+\end{enumerate}
+
+\section{学术服务}
+
+\datedentry
+  {EuroSys 2026 影子程序委员会委员（春季及秋季）}
+  {2026}
+\vspace{0.24em}
+\datedentry
+  {USENIX ATC 2025 工件评审委员会委员}
+  {2025}
+
+\section{荣誉与奖励}
+
+\datedentry
+  {SOSP 2026 学生奖学金（Student Scholarship）}
+  {2026}
+\vspace{0.20em}
+\datedentry
+  {OSDI 2026 学生资助（USENIX Student Grant）}
+  {2026}
+\vspace{0.20em}
+\datedentry
+  {华中科技大学优秀研究生}
+  {2024}
+\vspace{0.20em}
+\datedentry
+  {华中科技大学科技创新奖学金}
+  {2024}
+\vspace{0.20em}
+\datedentry
+  {华中科技大学优秀本科毕业生}
+  {2023}
+\vspace{0.20em}
+\datedentry
+  {新加坡国立大学计算机学院暑期项目优秀表现}
+  {2021}
 
 \end{document}
