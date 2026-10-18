@@ -1,33 +1,6 @@
 # 杨志军——中文求职简历
 
-本目录包含一页式中文研究型求职简历，版式与 `resume_en` 中的英文版保持一致，适用于计算机系统、分布式系统及相关岗位。
+[下载中文简历](resume.pdf)。
 
-## 文件
-
-- `resume.tex`：简历源文件。
-- `resume.pdf`：编译生成的投递版本。
-- `Makefile`：可复现的 PDF 构建入口。
-- `ctexhook.sty`：当前 XeCJK 环境所需的中文排版兼容文件。
-- `LICENSE`：改编模板的许可证。
-
-## 编译
-
-运行：
-
-```bash
-make
-```
-
-构建过程使用 XeLaTeX，并连续编译两次，以正确生成 PDF 元数据和超链接。
-
-## 内容规范
-
-- 论文列出完整作者名单，并将 Zhijun Yang 加粗。
-- 已录用但尚未正式出版的论文标注为“即将发表”。
-- 已正式出版的论文链接至官方页面，同时保留公开代码链接。
-- 页眉保留求职联系所需的手机号、邮箱、个人主页和 GitHub。
-- 简历不包含照片、论文录用率、性能数据和泛化的技能列表。
-
-## 模板
-
-单栏版式与英文版相同，改编自 [Jake's Resume](https://github.com/jakegut/resume)；原模板采用 MIT License。中文排版通过 XeCJK 实现。
+版式改编自 [Jake's Resume](https://github.com/jakegut/resume)，采用
+[MIT 许可证](LICENSE)。
